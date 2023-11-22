@@ -16,20 +16,28 @@ Java 17
 
 ## Usage
 
-To use GCodeErrorMadChecker first you need compile `GCodeErrorMadChecker.java` by running the following command in your terminal or command prompt on your computer (Windows/Mac/Linux):
+Download GCodeErrorMadChecker
+
+Open your terminal or command prompt on your computer (Windows/Mac/Linux) ang go to:
+
+```
+GCodeErrorMadChecker/src/main/java/
+```
+
+First, you need to compile `GCodeErrorMadChecker.java` by running the following command:
 
 ```bash
 javac GCodeErrorMadChecker.java
 ```
+This command will create the file ```GCodeErrorMadChecker.class```. This is your application, and you can move it wherever you want on your computer
 
-Now, you can run the compiled GCodeErrorMadChecker.class:
+To run your ```GCodeErrorMadChecker.class``` use
 
 ```bash
 java GCodeErrorMadChecker <filepath>
 ```
 
-## Command Line Options
-```<filepath>```: Path to the GCode file.
+where ```<filepath>``` is the path to your GCode file.
 
 ## Features
 Checks for suspicious lines based on the ASCII table and line length.
