@@ -57,4 +57,4 @@ The application prints the result, including:
 * List of line numbers with suspicious content
 
 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/MadMan2k/GCodeErrorMadChecker/blob/main/LICENSE) file for details.
