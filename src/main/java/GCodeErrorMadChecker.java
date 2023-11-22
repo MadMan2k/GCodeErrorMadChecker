@@ -50,7 +50,7 @@ public class GCodeErrorMadChecker {
                 if (checkerActivated && isSuspiciousLine(line)) {
                     badLineCounter++;
                     badLineNumbers.add(lineCounter);
-                    System.out.println("Error at line " + lineCounter + "; line length " + line.length() + ": " + line);
+                    System.out.println("Error at line " + lineCounter + ": " + line);
                 }
             }
 
