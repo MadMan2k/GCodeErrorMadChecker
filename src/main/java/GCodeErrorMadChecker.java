@@ -53,7 +53,7 @@ public class GCodeErrorMadChecker {
                 }
             }
 
-            if (startMarkerFound && endMarkerFound) {
+            if (!startMarkerFound && !endMarkerFound) {
                 printNoMarkersFound();
             } else {
                 printResult(lineCounter, badLineCounter, badLineNumbers);
@@ -122,7 +122,7 @@ public class GCodeErrorMadChecker {
         String noMarkersFound = "\n"
                 + "-----GCodeErrorMadChecker-----"
                 + "\n\n"
-                + "Looks like you forgot about Start and End Markers"
+                + "Looks like you forgot the Start and End Markers"
                 + "\n"
                 + "You need these markers to specify the range for checking"
                 + "\n\n"
@@ -138,7 +138,7 @@ public class GCodeErrorMadChecker {
                 + "\n"
                 + "to the beginning of your Machine Ending Gcode in your slicer"
                 + "\n\n"
-                + "Generate GCode. Now It should be ok"
+                + "Generate GCode. Now It should be okay"
                 + "\n\n"
                 + "-----------------------------";
         System.out.println(noMarkersFound);

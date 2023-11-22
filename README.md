@@ -1,12 +1,14 @@
 # GCodeErrorMadChecker
 
-GCodeErrorMadChecker is a Java CLI application that checks a GCode file for suspicious lines based on the ASCII table or line length.
+GCodeErrorMadChecker is a small Java CLI application that checks a GCode file for suspicious lines based on the ASCII table or line length.
+
+## Requires
+
+Java 17
 
 ## Usage
 
-**Java 17 is required**
-
-To use GCodeErrorMadChecker, compile `GCodeErrorMadChecker.java` by running the following command in your terminal or command prompt on your computer (Windows/Mac/Linux):
+To use GCodeErrorMadChecker first you need compile `GCodeErrorMadChecker.java` by running the following command in your terminal or command prompt on your computer (Windows/Mac/Linux):
 
 ```bash
 javac GCodeErrorMadChecker.java
