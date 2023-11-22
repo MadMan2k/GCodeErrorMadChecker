@@ -6,13 +6,13 @@ GCodeErrorMadChecker is a Java application that checks a GCode file for suspicio
 
 **Java 17 is required**
 
-To use GCodeErrorMadChecker, compile GCodeErrorMadChecker.java running following command in your terminal or command prompt on your computer (Windows/Mac/Linux)
+To use GCodeErrorMadChecker, compile `GCodeErrorMadChecker.java` by running the following command in your terminal or command prompt on your computer (Windows/Mac/Linux):
 
 ```bash
 javac GCodeErrorMadChecker.java
 ```
 
-Now you can run compiled GCodeErrorMadChecker.class:
+Now, you can run the compiled GCodeErrorMadChecker.class:
 
 ```bash
 java GCodeErrorMadChecker <filepath>
@@ -39,15 +39,23 @@ Add the Start Marker
 ```
 ;GCodeErrorMadChecker_Start
 ```
-to the end of your Machine Starting Gcode in your slicer;
+to the end of your Machine Starting Gcode in your slicer.
 
 Add the End Marker
 ```
 ;GCodeErrorMadChecker_End
 ```
-to the beginning of your Machine Ending Gcode in your slicer
+to the beginning of your Machine Ending Gcode in your slicer.
 
 **GCodeErrorMadChecker will not check your code without Start and End Markers**
+
+## Customization (optional)
+You can customize the markers used for the start and end of the checking range by modifying the constants in the code:
+
+```
+private static final String START_MARKER = ";GCodeErrorMadChecker_Start";
+private static final String END_MARKER = ";GCodeErrorMadChecker_End";
+```
 
 ## Result
 The application prints the result, including:

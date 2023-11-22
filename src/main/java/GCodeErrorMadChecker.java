@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * GCodeErrorMadChecker checks a GCode file for suspicious lines based on the ASCII table or line length
+ * GCodeErrorMadChecker checks a GCode file for suspicious lines based on the ASCII table or line length.
  */
 public class GCodeErrorMadChecker {
     private static final String START_MARKER = ";GCodeErrorMadChecker_Start";
@@ -30,20 +30,20 @@ public class GCodeErrorMadChecker {
             int badLineCounter = 0;
             List<Integer> badLineNumbers = new ArrayList<>();
             boolean checkerActivated = false;
-            boolean checkerActivatedFlag = false;
-            boolean checkerDisactivatedFlag = false;
+            boolean startMarkerFound = false;
+            boolean endMarkerFound = false;
 
             while ((line = br.readLine()) != null) {
                 lineCounter++;
 
                 if (isStartMarker(line)) {
                     checkerActivated = true;
-                    checkerActivatedFlag = true;
+                    startMarkerFound = true;
                 }
 
                 if (isEndMarker(line)) {
                     checkerActivated = false;
-                    checkerDisactivatedFlag = true;
+                    endMarkerFound = true;
                 }
 
                 if (checkerActivated && isSuspiciousLine(line)) {
@@ -53,7 +53,7 @@ public class GCodeErrorMadChecker {
                 }
             }
 
-            if (checkerActivatedFlag && checkerDisactivatedFlag) {
+            if (startMarkerFound && endMarkerFound) {
                 printNoMarkersFound();
             } else {
                 printResult(lineCounter, badLineCounter, badLineNumbers);
@@ -115,13 +115,16 @@ public class GCodeErrorMadChecker {
         System.out.println(result);
     }
 
+    /**
+     * Prints a message when start and end markers are not found.
+     */
     private static void printNoMarkersFound() {
         String noMarkersFound = "\n"
                 + "-----GCodeErrorMadChecker-----"
                 + "\n\n"
                 + "Looks like you forgot about Start and End Markers"
                 + "\n"
-                + "You need this markers to specify the range for checking"
+                + "You need these markers to specify the range for checking"
                 + "\n\n"
                 + "Add the Start Marker"
                 + "\n"
