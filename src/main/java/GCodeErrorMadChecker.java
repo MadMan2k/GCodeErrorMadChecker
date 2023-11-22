@@ -10,6 +10,7 @@ import java.util.List;
 public class GCodeErrorMadChecker {
     private static final String START_MARKER = ";GCodeErrorMadChecker_Start";
     private static final String END_MARKER = ";GCodeErrorMadChecker_End";
+    private static final int SUSPICIOUS_LINE_LENGTH_MORE_THAN = 75;
 
     /**
      * Main method to run the GCodeErrorMadChecker.
@@ -90,7 +91,7 @@ public class GCodeErrorMadChecker {
      * @return True if the line is suspicious, otherwise false.
      */
     private static boolean isSuspiciousLine(String line) {
-        return !line.isBlank() && (!line.matches("[\\x20-\\x7E]+") || line.length() > 50);
+        return !line.isBlank() && (!line.matches("[\\x20-\\x7E]+") || line.length() > SUSPICIOUS_LINE_LENGTH_MORE_THAN);
     }
 
     /**
