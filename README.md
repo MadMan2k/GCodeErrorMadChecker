@@ -4,10 +4,10 @@ GCodeErrorMadChecker is a small Java CLI application that checks a GCode file fo
 
 This application can protect you from blobs like this:
 
-<img src='https://github.com/MadMan2k/' alt='blob1' width='1200'/>
+<img src='https://github.com/MadMan2k/GCodeErrorMadChecker/blob/main/src/main/resources/blob1.png' alt='blob1' width='1200'/>
 or like this:
 
-<img src='https://github.com/MadMan2k/' alt='blob2' width='1200'/>
+<img src='https://github.com/MadMan2k/GCodeErrorMadChecker/blob/main/src/main/resources/blob2.png' alt='blob2' width='1200'/>
 Unfortunately, your machine most probably will not alert you about these problems and start the task, but will stop trying to read the occurred code. So, you will not only fail your model but also risk damaging your machine
 
 ## Requires
